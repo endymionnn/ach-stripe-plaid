@@ -82,11 +82,8 @@ if ($_POST['action'] == 'pay') {
         'customer'    => $_SESSION['customer'],
     ]);
 
-    echo '<pre>';
-    print_r($result);
-    exit();
-
     $arr = array(
+        'id'          => $result->id,
         'name'        => $result->source->account_holder_name,
         'acount_no'   => $result->source->last4,
         'routing_no'  => $result->source->routing_number,
